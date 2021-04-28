@@ -18,9 +18,7 @@
 - killing a process/crashed processes
   - from the `top` list, you can press `k` to kill a process
   - `kill process_id` also kills processes 
-  - `pkill process_name` can kill processes by their name  
-- how to check any process running in foreground and background jobs
-- how to stop/kill any process running in foreground and background jobs
+  - `pkill process_name` can kill processes by their name
 - how to change permissions with chmod command
   - `chmod +x -w file_name` will grant executable permissions and revoke write permissions
   - `x` for execute, `r` for read, `w` for write
@@ -50,7 +48,14 @@
     - it does not change the original file, but can be saved to a new file
   - `wc` counts the number of lines, words, and characters in a file
     - output is in the format `lines words characters filename`
-- what is pipping and redirection (hint > indicates to the command line)
-- what is STDIN standard input and output
+- what is piping and redirection (hint > indicates to the command line)
+  - output is usually printed in the command line
+  - `>` indicates that we want to save the output to a file, rather than printing it
+  - if the file already exists, its contents will be overwritten
+  - `>>` appends the new content, rather than overwriting
+  - `|` sends data from one program to another
+  - e.g. `ls | head -2` will return the first two files in the directory
+  - we can pipe any number of commands together
+- what is standard input and output
   - `stdin` is standard input stream, which accepts text as input
   - `stdout` is standard output stream, which delivers text to the shell
