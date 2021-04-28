@@ -1,1 +1,56 @@
 # Linux Commands
+
+- link to check permissions http://permissions-calculator.org/
+
+- check hidden files and directories `ls -a`
+- flags - a flag is a type of option of boolean type, that is always false by default and tells the function how to act, e.g. `-a`, `-l`
+- what is a wildcard - a character that replaces an unknown character or characters when searching for files
+- how to use wildcards
+  - `*` represents any number of unknown characters
+  - `?` represents one unknown character
+  - `[]` matches any characters defined within the brackets
+  - e.g. `ls i*` lists any files starting with `i`, `ls *.txt` lists any files of `.txt` type
+- how can you do process management 
+  - process management is controlling running processes
+- what is currently running on your system
+  - `top` lists current top processes in real-time
+  - `ps` shows a single-moment snapshot of all current processes, and `ps aux` displays more information
+- killing a process/crashed processes
+  - from the `top` list, you can press `k` to kill a process
+  - `kill process_id` also kills processes 
+  - `pkill process_name` can kill processes by their name  
+- how to check any process running in foreground and background jobs
+- how to stop/kill any process running in foreground and background jobs
+- how to change permissions with chmod command
+  - `chmod +x -w file_name` will grant executable permissions and revoke write permissions
+  - `x` for execute, `r` for read, `w` for write
+  - permissions can be set for `u` user, `g` group, `o` others or `a` all
+  - e.g. `chmod u=rw file_name` gives a user read and write permissions, and removes any additional previously held permissions  
+- how to check permission for files/dir
+  - `ls -l` lists all files with additional information, including permissions
+  - `ll` achieves the same thing
+- what does 777, 400, 600 do
+  - some combinations of permissions have a numerical shortcut that can be used instead
+  - `777` gives rwe to everyone
+  - `400` gives r to user and no other permissions
+  - `600` gives rw to user and no other permissions
+- how to use head, tail, sort, nl (number line), wc (word count)
+  - `head [option] filename` displays the first few lines of a file (10 by default)
+  - `tail [option] filename` displays the last few lines of a file (10 by default)
+  - `sort [options] filename` sorts information
+    - the original data is unchanged, the sorted version only appears as command line output
+    - by default, it returns each line in alphabetical order, with numbers before letters, and lowercase before uppercase
+    - when using the default, numbers will by ordered by first digit, then second e.g. `1, 10, 2`
+    - option `-n` sorts numbers according to value e.g. `1, 2, 10`
+    - option `-r` reverses the sort order
+    - if data is in a table, `-k` will sort by a specific column, e.g. `sort filename.txt -k 2n` 
+    - option `-u` returns only unique rows
+    - sorted information can be saved into a new file with `sort filename.txt > filename_sorted.txt`
+  - `nl` outputs the contents of a file, and includes the number of each line
+    - it does not change the original file, but can be saved to a new file
+  - `wc` counts the number of lines, words, and characters in a file
+    - output is in the format `lines words characters filename`
+- what is pipping and redirection (hint > indicates to the command line)
+- what is STDIN standard input and output
+  - `stdin` is standard input stream, which accepts text as input
+  - `stdout` is standard output stream, which delivers text to the shell
